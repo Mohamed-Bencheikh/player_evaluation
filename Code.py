@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import LabelEncoder
-from sklearn.svm import SVR
+from sklearn.linear_model import LinearRegression
 
 class Code:
     def __init__(self) -> None:
@@ -19,7 +19,7 @@ class Code:
         X = df.loc[:,"potential":"gk_reflexes"]
         Y = df["overall_rating"]
 
-        model = SVR()
+        model = LinearRegression()
         model.fit(X,Y)
 
         model.score(X,Y)
