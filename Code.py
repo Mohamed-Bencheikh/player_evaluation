@@ -1,13 +1,14 @@
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import LabelEncoder
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LinearRegression, LogisticRegression
+from sklearn.svm import SVR
 
 class Code:
     def __init__(self) -> None:
         pass
 
-    def prediction(lst = []):
+    def prediction(model = None, lst = [] , attrs = [] , target = []):
         df = pd.read_csv("data.csv")
         df.dropna(axis=0,inplace=True)
         
@@ -18,9 +19,11 @@ class Code:
 
         X = df.loc[:,"potential":"gk_reflexes"]
         Y = df["overall_rating"]
+        
+        # X = df[attrs]
+        # Y = df[target]
 
-        model = LinearRegression()
-        model.fit(X,Y)
+        model.fit(X,Y)            
 
         model.score(X,Y)
         vals = np.array(lst).reshape(1,-1)

@@ -1,0 +1,58 @@
+Le machine learning consiste à laisser le programme apprendre d'apres les experiences precedentes.
+Pour donner à l'ordinateur la capacite d'apprendre, on utilise des methodes d'apprentissage qui sont inspirés de la façon dont nous,les étres humains, apprenons à faire les choses.
+Parmi ces méthodes on compte:
+    * L'apprentissage supervisé 
+    * L'apprentissage non supervisé
+    * L'apprentissage par renforcement.
+On parle d'appretisage supervisé lorsqu'on fournit à une machine beaucoup d'exemples qu'elle doit étudier.
+Il se base sur 4 notions fondamentales:
+    - Les données (DataSet)
+    - Le modèle et ses paramètres
+    - La fonction Coùt 
+    - L'algorithme d'apprentissage.
+Notion1 : DataSet
+    C'est un ensemble de données organisées dans un tableau sous forme des colonnes et des lignes ,
+    les colonnes représentent les attribues (features) et les lignes représentent les enregistrements(samples).
+    Géneralement un dataset se modelèse par le couple (X,y) où X fait réference aux facteurs intervenus, et y représente la cible(target) que l'on cherche à prédire. 
+ 
+Notion2 : Le modèle   
+    On devéloppe ce modèle d'après le dataset, il peut s'agir d'un modèle linéaire, ou bien un modèle non linéaire .
+
+Notion3 : La fonction Coùt 
+    Il s'agit des erreurs qu'un modèle nous retourne par rapport à notre dataset.
+    Avoir un bon modèle , c'est avoir un modèle qui donne de petites erreurs.
+
+Notion4 : L'algorithme d'apprentissage
+    L'objectif en Supervised Learning c'est de trouver les paramètres du modèle qui minimisent la fonction Coùt.
+    Pour cela on utilise un algorithme d'apprentissage.
+
+En Supervised Learning on distingue 2 types:
+    1- Régression
+    2- Classification
+
+Dans les problèmes de régression, on cherche à prédire la valeur d’une 
+variable continue, c’est-à-dire une variable qui peut prendre une infinité
+de valeurs. 
+
+Dans les problèmes de classification, on cherche à classer un objet dans 
+différentes classes, c’est-à-dire que l’on cherche à prédire la valeur d’une 
+variable discrète (qui ne prend qu’un nombre fini de valeurs).
+
+La régression linéaire est un algorithme d’apprentissage automatique basé sur l’apprentissage supervisé. Il effectue une tâche de régression. Les modèles de régression sont des valeurs de prédiction cibles basées sur des variables indépendantes. Il est principalement utilisé pour découvrir la relation entre les variables et les prévisions. Veuillez vous référer à la régression linéaire pour une référence complète.
+Discutons de certains avantages et inconvénients de la régression linéaire.
+
+** AVANTAGES :
+    - La régression linéaire est simple à mettre en œuvre et plus facile à interpréter les coefficients de sortie.
+    - Lorsque vous savez que la relation entre la variable indépendante et la variable dépendante a une relation linéaire, cet algorithme est le meilleur à utiliser car il est moins complexe que d’autres algorithmes.
+    - La régression linéaire est susceptible de surajustement, mais elle peut être évitée en utilisant certaines techniques de réduction de dimensionnalité, de régularisation (L1 et L2) et de validation croisée.
+
+** INCOVENIENTS :
+    - D’un autre côté, dans la technique de régression linéaire, les valeurs aberrantes peuvent avoir des effets énormes sur la régression et les limites sont linéaires dans cette technique.  
+    - Diversement, la régression linéaire suppose une relation linéaire entre les variables dépendantes et indépendantes. Cela signifie qu’il suppose qu’il existe une relation linéaire entre eux. Il suppose l’indépendance entre les attributs.
+    - Mais la régression linéaire examine également une relation entre la moyenne des variables dépendantes et les variables indépendantes. Tout comme la moyenne n’est pas une description complète d’une seule variable, la régression linéaire n’est pas une description complète des relations entre les variables.  
+
+Différent types de Linear Regression :
+    * Simple Linear Regression
+    * Multiple linear Regression
+    * Logistic Regression
+    * Ordinal regression

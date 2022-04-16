@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript"></script>
+</head>
+<body>
+    <p>Choose the attributes: </p>
+    <form action="/tmp_form" method="post">
+        {%for atr in attributes%}
+        <input type="checkbox" name="check_attrs" id="" value="{{atr}}">{{atr}}
+        {%endfor%} 
+        <input type="submit" value="next">
+    </form>
+    
+</body>
+</html>

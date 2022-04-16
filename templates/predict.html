@@ -6,6 +6,8 @@
 <script type="text/javascript"></script>
 </head>
 <body>
-    <h3 style="color: crimson; text-align: center;">The result is : <span style="color: green;font-weight: bold;">{{vr}}</span> </h3>
+    {%for mod,res in mod_res%}
+<h3 style="color: crimson; text-align: center;">The result with {{mod}} is : <span style="color: green;font-weight: bold;">{{res}}</span> </h3>
+    {%endfor%}
 </body>
 </html>
