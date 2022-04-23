@@ -26,25 +26,22 @@ def check():
     return render_template('check.html',attributes=attributes)
 
 selected = []
-@app.route('/tmp_form',methods=['POST'])
+@app.route('/form',methods=['POST'])
 def form():
     selected = request.form.getlist('check_attrs')
-    return render_template('tmp_form.html',selected=selected)
+    return render_template('form.html',selected=selected)
 
 @app.route('/predict',methods=['POST'])
 def predict():
     values = []
-    # target = ['overall_rating']
-    # attrs = ['preferred_foot','dribbling']
-    models = [LinearRegression(),LogisticRegression(),SVR()]
+    target = ['overall_rating']
+    attrs = ['preferred_foot','dribbling']
 
     for attr in attributes:
         values.append(int(request.form.get(attr,50)))
-    results = []
-    mod_res = zip(models,results)
-    for model in models:
-        results.append(str(round(Code.prediction(model,values)[0],2)))
-    return render_template('predict.html',mod_res=mod_res)
+    
+    result = round(Code.prediction(values)[0],2)
+    return render_template('predict.html',res = result)
 
 if __name__ == '__main__':
     app.run()
