@@ -8,7 +8,7 @@ class Code:
     def __init__(self) -> None:
         pass
 
-    def prediction(model = None, lst = [] , attrs = [] , target = []):
+    def preprocess():
         df = pd.read_csv("data.csv")
         df.dropna(axis=0,inplace=True)
         
@@ -16,13 +16,14 @@ class Code:
         categorical_attributes = ['preferred_foot', 'attacking_work_rate', 'defensive_work_rate']
         for attr in categorical_attributes:
             df[attr] = le.fit_transform(df[attr])
-
         X = df.loc[:,"potential":"gk_reflexes"]
         Y = df["overall_rating"]
+        return (X,Y)
         
-        # X = df[attrs]
-        # Y = df[target]
+    def prediction(lst = []):
+        X,Y = Code.preprocess()
 
+        model = SVR()
         model.fit(X,Y)            
 
         model.score(X,Y)

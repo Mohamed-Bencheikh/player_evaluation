@@ -6,8 +6,9 @@
 <script type="text/javascript"></script>
 </head>
 <body>
-    {%for mod,res in mod_res%}
-<h3 style="color: crimson; text-align: center;">The result with {{mod}} is : <span style="color: green;font-weight: bold;">{{res}}</span> </h3>
-    {%endfor%}
+    <div style="background-color: black; color: aliceblue;">
+        <h3 style="color: crimson; text-align: center;">The result is : <span style="color: green;font-weight: bold;">{{res}}</span> </h3>
+        <input type="range" name="range" id="" value="{{res}}" style="color: green; text-align: center;">
+    </div>
 </body>
 </html>

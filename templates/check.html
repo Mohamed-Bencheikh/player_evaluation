@@ -5,9 +5,9 @@
 <title>Insert title here</title>
 <script type="text/javascript"></script>
 </head>
-<body>
+<body style="color: black;">
     <p>Choose the attributes: </p>
-    <form action="/tmp_form" method="post">
+    <form action="/form" method="post">
         {%for atr in attributes%}
         <input type="checkbox" name="check_attrs" id="" value="{{atr}}">{{atr}}
         {%endfor%} 
