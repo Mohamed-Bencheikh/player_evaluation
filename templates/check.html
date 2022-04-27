@@ -5,13 +5,15 @@
 <title>Insert title here</title>
 <script type="text/javascript"></script>
 </head>
-<body style="color: black;">
-    <p>Choose the attributes: </p>
-    <form action="/form" method="post">
-        {%for atr in attributes%}
+<body style="background-color: orange; ">
+    <h3>Choose the attributes: </h3>
+    <form action="/form" method="post" style="font-weight: bold;">
+        {%for atr in attrs%}
         <input type="checkbox" name="check_attrs" id="" value="{{atr}}">{{atr}}
+            <br>
         {%endfor%} 
-        <input type="submit" value="next">
+        <br>
+        <input type="submit" value="next" style="background-color: blue; font-weight: bold;">
     </form>
     
 </body>
