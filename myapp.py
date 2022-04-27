@@ -2,6 +2,7 @@ from flask import Flask, request,render_template
 from Code import Code
 from sklearn.linear_model import LinearRegression,LogisticRegression
 from sklearn.svm import SVR
+import database
 
 attributes = ['potential','preferred_foot','attacking','defensing','crossing', 'finishing', 'heading',
        'short_passing', 'volleys', 'dribbling', 'curve', 'free_kicks',
@@ -23,7 +24,7 @@ def position():
 
 @app.route('/check',methods=['POST'])
 def check():
-    return render_template('check.html',attributes=attributes)
+    return render_template('check.html',attrs=attributes)
 
 selected = []
 @app.route('/form',methods=['POST'])
@@ -35,12 +36,17 @@ def form():
 def predict():
     values = []
     target = ['overall_rating']
-    attrs = ['preferred_foot','dribbling']
+    attrs = ['player_api_id','dribbling']
 
     for attr in attributes:
         values.append(int(request.form.get(attr,50)))
     
     result = round(Code.prediction(values)[0],2)
+    player_id = int(request.form.get('id'))
+    match_id = database.getLastMatch(player_id) + 1
+
+    # data = match_id,player_id,result
+    database.insertData(match_id,player_id,result)
     return render_template('predict.html',res = result)
 
 if __name__ == '__main__':
