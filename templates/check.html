@@ -1,20 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<script type="text/javascript"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <title>Document</title>
 </head>
-<body style="background-color: orange; ">
+<body>
+    <script src="/static/js/script1.js"></script>
+    <script src="/static/js/script2.js"></script>
+    <script src="/static/js/script3.js"></script>
     <h3>Choose the attributes: </h3>
     <form action="/form" method="post" style="font-weight: bold;">
-        {%for atr in attrs%}
-        <input type="checkbox" name="check_attrs" id="" value="{{atr}}">{{atr}}
-            <br>
+        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+        {%for atr,iter in attrs%}
+        {% if iter%6 == 0 %}
+        <br>
+        {% endif %}
+        <input type="checkbox" class="btn-check" id="{{atr}}" name="{{atr}}" autocomplete="off">
+        <label class="btn btn-outline-primary" for="{{atr}}">{{atr}}</label>
         {%endfor%} 
         <br>
-        <input type="submit" value="next" style="background-color: blue; font-weight: bold;">
+        <input type="submit" value="next" style="background-color: blue; font-weight: bold;" class="btn btn-primary btn-sm">
+        </div>
     </form>
-    
 </body>
 </html>
