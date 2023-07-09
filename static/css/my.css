@@ -1,0 +1,31 @@
+body{
+    background-image: url(../images/IA-et-football.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+div{
+    position:fixed;
+    top: 250px;
+    left: 600px;
+    align-items: center;
+    text-align: center;
+}
+h1,h3{
+    color:black;
+    size: 70px;
+    font-weight: bolder;
+    font-family:'Courier New', Courier, monospace;
+}
+button{
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    size: 50px;
+    font-weight: bold;
+    background: white;
+}
+span{
+    font-weight: bolder;
+    color: blue;
+    size: 50px;
+}

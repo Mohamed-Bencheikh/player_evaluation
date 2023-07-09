@@ -1,20 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<script type="text/javascript"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/form.css"> 
 </head>
 <body>
+    <script src="/static/js/script1.js"></script>
+    <script src="/static/js/script2.js"></script>
+    <script src="/static/js/script3.js"></script>
+    <div id="form">
     <form action="/predict" method="post">
-        <table>
-            <tr><td><label for="id">Player id</label><td><input type="number" name="id" id=""></td></td></tr>
+        
         {%for i in selected%}
-        <tr><td><label for="{{i}}">{{i}}</label></td><td><input type="number" name="{{i}}" id="">
-</td></tr>
+        {%if i == 'preferred foot'%}
+        <label class="form-label">{{i}}</label>
+        <div class="mb-3">
+            <input type="radio" class="btn-check" id="Right" name="prefoot" autocomplete="off" >
+            <label class="btn btn-outline-primary" for="Right">Right</label>
+            <input type="radio" class="btn-check" id="Left" name="prefoot" autocomplete="off" >
+            <label class="btn btn-outline-primary" for="Left">Left</label>
+        </div>
+        {%elif i == 'attacking' or i == 'defensing'%}
+        <label class="form-label">{{i}}</label>
+        <div class="mb-3">
+            <input type="radio" class="btn-check" id="low" name="rate" autocomplete="off" >
+            <label class="btn btn-outline-primary" for="low">Low</label>
+            <input type="radio" class="btn-check" id="medium" name="rate" autocomplete="off" >
+            <label class="btn btn-outline-primary" for="medium">Medium</label>
+            <input type="radio" class="btn-check" id="high" name="rate" autocomplete="off" >
+            <label class="btn btn-outline-primary" for="high">High</label>
+        </div>
+        {%else%}
+        <div class="mb-3">
+            <label for="{{i}}" class="form-label">{{i}}</label>
+            <input type="number" class="form-control" id="{{i}}">
+        </div>
+        {%endif%}
         {%endfor%}
-</table>
-<input type="submit" value="submit" style="background-color: green; font-weight: bold;">
+
+<input type="submit" value="submit" class="btn btn-primary ">
+
+
     </form>
+</div>
 </body>
 </html>

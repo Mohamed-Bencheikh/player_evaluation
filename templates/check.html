@@ -5,25 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/check.css">
     <title>Document</title>
 </head>
 <body>
     <script src="/static/js/script1.js"></script>
     <script src="/static/js/script2.js"></script>
     <script src="/static/js/script3.js"></script>
+    <div id="dv">
     <h3>Choose the attributes: </h3>
     <form action="/form" method="post" style="font-weight: bold;">
-        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+        <!-- <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group"> -->
         {%for atr,iter in attrs%}
         {% if iter%6 == 0 %}
         <br>
         {% endif %}
-        <input type="checkbox" class="btn-check" id="{{atr}}" name="{{atr}}" autocomplete="off">
+        <input type="checkbox" class="btn-check" id="{{atr}}" name="check_attrs" autocomplete="off" value="{{atr}}">
         <label class="btn btn-outline-primary" for="{{atr}}">{{atr}}</label>
         {%endfor%} 
-        <br>
-        <input type="submit" value="next" style="background-color: blue; font-weight: bold;" class="btn btn-primary btn-sm">
+        <br><br>
+        <button type="submit" class="btn btn-primary">Next</button>
         </div>
     </form>
+</div>
 </body>
 </html>

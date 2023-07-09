@@ -1,0 +1,17 @@
+form{
+    align-items: center;
+}
+body{
+    background-image: url(../images/intelligence-artificielle-football.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+#form{
+    align-items: center;
+    position: fixed;
+    left: 700px;
+}
+label,input{
+    font-weight: bolder;
+    size: 80px;
+}

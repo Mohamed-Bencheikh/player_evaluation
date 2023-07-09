@@ -1,0 +1,14 @@
+body{
+    background-image: url(../images/HEMIS_K7X002.jpeg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+#dv{
+    align-items: center;
+    position: fixed;
+    top: 100px;
+    left: 300px;
+}
+label{
+    font-weight: bolder;
+}

@@ -1,13 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<script type="text/javascript"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/predict.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    
+    <title>Result</title>
 </head>
-<body>
-    <div style="background-color: black; color: aliceblue;">
-        <h3 style="color: crimson; text-align: center; font-weight: bold;">The result is : <span style="color: green;font-weight: bold;">{{res}}</span> </h3>
-    </div>
+ <style>
+    body{
+        background: #000;
+    }
+    span{
+        font-family: bolder;
+        color: darkblue;
+    }
+        #myProgress{
+            width: 100%;
+            background: #ddd;
+        }
+        #myBar{
+            width: 75%;
+            height: 30px;
+            background: #4caf50;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+        }
+    </style>
+    <body>
+    <script src="/static/js/script1.js"></script>
+    <script src="/static/js/script2.js"></script>
+    <script src="/static/js/script3.js"></script>
+<!-- <div class="container"> -->
+    <!-- <div class="progress">
+        <div class="col-md-3 col-sm-6">
+            <div class="progress blue">
+                <span class="progress-left">
+
+                  <span class="progress-bar"></span>
+                </span>
+                <span class="progress-right">
+                    <span class="progress-bar"></span>
+                </span>
+                <div class="progress-value">75</div>
+            </div>
+        </div>
+</div> -->
+   <div id="myProgress">
+    <div id="myBar"><span>{{res}}</span></div>
+   </div>
 </body>
 </html>
